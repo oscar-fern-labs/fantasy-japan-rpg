@@ -130,4 +130,34 @@ MIT License - see LICENSE file for details
 
 ## Live Demo
 
-Backend API: https://backend-morphvm-m4c3u0o7.http.cloud.morph.so/health
+🎮 **Play Now**: https://frontend-morphvm-m4c3u0o7.http.cloud.morph.so
+🔧 **Backend API**: https://backend-morphvm-m4c3u0o7.http.cloud.morph.so/health
+
+## Quick Start Guide
+
+1. **Visit the Game**: Open https://frontend-morphvm-m4c3u0o7.http.cloud.morph.so
+2. **Create or Join**: Either create a new adventure or join with a 6-character code
+3. **Choose Class**: Select from 6 unique character classes
+4. **Start Adventure**: Wait for players and begin your journey
+5. **Play**: Submit actions each round and watch the AI craft your story
+
+## Frontend Features
+
+🎨 **Visual Design**:
+- Retro pixel art aesthetic with Japanese theme
+- Custom fonts (VT323 pixel font, Orbitron headers)
+- Animated character sprites and effects
+- Responsive design optimized for desktop gaming
+
+🎯 **User Interface**:
+- Welcome screen with lobby creation/joining
+- Character class selection with detailed stats
+- Real-time lobby with player list and status
+- Game interface with narrative log and action input
+- Character sheet with health, chakra, karma tracking
+
+⚡ **Real-time Features**:
+- WebSocket integration for live multiplayer
+- Automatic game state synchronization
+- Turn-based action submission
+- AI story processing indicators
