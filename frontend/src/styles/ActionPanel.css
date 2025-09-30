@@ -1,0 +1,260 @@
+.action-panel {
+  background: var(--background-medium);
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.panel-header h3 {
+  color: var(--primary-gold);
+  font-family: var(--font-header);
+  margin: 0;
+  font-size: 1.3em;
+}
+
+.turn-status {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.status-ended {
+  color: #32cd32;
+  background: rgba(50, 205, 50, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #32cd32;
+}
+
+.status-active {
+  color: var(--primary-gold);
+  background: rgba(255, 215, 0, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--primary-gold);
+}
+
+.action-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.action-input {
+  width: 100%;
+  min-height: 120px;
+  max-height: 300px;
+  padding: 15px;
+  background: var(--background-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-light);
+  font-family: var(--font-pixel);
+  font-size: 1em;
+  line-height: 1.5;
+  resize: none;
+  outline: none;
+  transition: all 0.3s ease;
+  overflow-y: auto;
+}
+
+.action-input:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.action-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.action-input::placeholder {
+  color: var(--text-light);
+  opacity: 0.6;
+  line-height: 1.4;
+}
+
+.input-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 0.8em;
+}
+
+.char-counter {
+  color: var(--text-light);
+  opacity: 0.7;
+}
+
+.char-counter .warning {
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+.input-hint {
+  color: var(--text-light);
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-action-btn {
+  flex: 2;
+  height: 45px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.end-turn-btn {
+  flex: 1;
+  height: 45px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.action-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.action-buttons button:disabled:hover {
+  transform: none;
+  background: linear-gradient(135deg, var(--secondary-brown), var(--dark-brown));
+  color: var(--text-light);
+}
+
+.turn-info {
+  padding: 15px;
+  background: var(--background-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.processing-info,
+.waiting-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.processing-animation,
+.waiting-animation {
+  font-size: 2em;
+  animation: pulse 2s infinite;
+}
+
+.processing-text,
+.waiting-text {
+  flex: 1;
+}
+
+.processing-text strong,
+.waiting-text strong {
+  color: var(--primary-gold);
+  font-size: 1.1em;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.processing-text p,
+.waiting-text p {
+  color: var(--text-light);
+  opacity: 0.9;
+  margin: 0;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.action-tips {
+  background: var(--background-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.action-tips h4 {
+  color: var(--primary-gold);
+  font-family: var(--font-header);
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+}
+
+.action-tips ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-light);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+.action-tips li {
+  margin-bottom: 8px;
+}
+
+.action-tips li:last-child {
+  margin-bottom: 0;
+}
+
+.action-tips strong {
+  color: var(--primary-gold);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .panel-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .submit-action-btn,
+  .end-turn-btn {
+    flex: none;
+  }
+  
+  .processing-info,
+  .waiting-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+}

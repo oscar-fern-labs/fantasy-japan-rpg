@@ -1,0 +1,224 @@
+/* Fantasy Japan RPG - Global Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette - Traditional Japanese & Fantasy */
+  --primary-red: #c8102e;
+  --primary-gold: #ffd700;
+  --secondary-brown: #8b4513;
+  --dark-brown: #654321;
+  --accent-blue: #4169e1;
+  --text-light: #f5f5dc;
+  --text-dark: #2f2f2f;
+  --background-dark: #1a1a1a;
+  --background-medium: #2d2d2d;
+  --background-light: #3f3f3f;
+  --border-color: #8b4513;
+  --glow-color: #ffd700;
+  --health-color: #ff4444;
+  --chakra-color: #4444ff;
+  --karma-color: #44ff44;
+  
+  /* Pixel fonts */
+  --font-pixel: 'VT323', monospace;
+  --font-header: 'Orbitron', monospace;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-pixel);
+  background: var(--background-dark);
+  color: var(--text-light);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-dark);
+  border: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-brown);
+  border: 1px solid var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-gold);
+}
+
+/* Utility Classes */
+.pixel-font {
+  font-family: var(--font-pixel);
+}
+
+.header-font {
+  font-family: var(--font-header);
+}
+
+.glow-text {
+  text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color);
+}
+
+.pixel-border {
+  border: 3px solid var(--border-color);
+  border-image: 
+    repeating-linear-gradient(
+      45deg,
+      var(--border-color) 0,
+      var(--border-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ) 3;
+}
+
+.retro-button {
+  background: linear-gradient(135deg, var(--secondary-brown), var(--dark-brown));
+  border: 2px solid var(--primary-gold);
+  color: var(--text-light);
+  padding: 10px 20px;
+  font-family: var(--font-pixel);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.retro-button:hover {
+  background: linear-gradient(135deg, var(--primary-gold), var(--secondary-brown));
+  color: var(--text-dark);
+  text-shadow: 0 0 5px var(--glow-color);
+  transform: scale(1.05);
+}
+
+.retro-button:active {
+  transform: scale(0.95);
+}
+
+.retro-input {
+  background: var(--background-medium);
+  border: 2px solid var(--border-color);
+  color: var(--text-light);
+  padding: 8px 12px;
+  font-family: var(--font-pixel);
+  font-size: 16px;
+  outline: none;
+}
+
+.retro-input:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr 300px;
+  grid-template-rows: auto 1fr auto;
+  gap: 20px;
+  height: calc(100vh - 40px);
+  max-height: 900px;
+}
+
+/* Character Stats */
+.stat-bar {
+  background: var(--background-dark);
+  border: 2px solid var(--border-color);
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.stat-fill.health {
+  background: linear-gradient(90deg, var(--health-color), #ff6666);
+}
+
+.stat-fill.chakra {
+  background: linear-gradient(90deg, var(--chakra-color), #6666ff);
+}
+
+.stat-fill.karma {
+  background: linear-gradient(90deg, var(--karma-color), #66ff66);
+}
+
+.stat-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Animations */
+@keyframes pixelGlow {
+  0%, 100% { text-shadow: 0 0 5px var(--glow-color); }
+  50% { text-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color); }
+}
+
+@keyframes slideIn {
+  from { 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to { 
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-glow {
+  animation: pixelGlow 2s infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .game-layout {
+    grid-template-columns: 250px 1fr 250px;
+  }
+}
+
+@media (max-width: 900px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+}

@@ -1,0 +1,312 @@
+.lobby-screen {
+  min-height: 100vh;
+  padding: 20px;
+  background: var(--background-dark);
+}
+
+.lobby-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--background-medium);
+  border: 3px solid var(--border-color);
+  border-radius: 8px;
+  padding: 30px;
+  position: relative;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 100px;
+  color: var(--text-light);
+}
+
+/* Header */
+.lobby-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.lobby-title {
+  font-family: var(--font-header);
+  font-size: 2.5em;
+  margin: 0;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.lobby-status {
+  margin-top: 10px;
+}
+
+.status-indicator {
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 5px 10px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 4px;
+  border: 1px solid currentColor;
+}
+
+.lobby-code-section {
+  text-align: right;
+}
+
+.lobby-code-container label {
+  display: block;
+  color: var(--text-light);
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.lobby-code-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.lobby-code {
+  font-family: var(--font-header);
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--primary-gold);
+  background: var(--background-dark);
+  padding: 10px 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  letter-spacing: 3px;
+}
+
+.copy-button {
+  padding: 8px;
+  min-width: 40px;
+  font-size: 1.2em;
+}
+
+.lobby-code-container small {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 0.9em;
+}
+
+/* Players Section */
+.players-section {
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  color: var(--primary-gold);
+  font-family: var(--font-header);
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.refresh-button {
+  padding: 8px 12px;
+  font-size: 1.2em;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.player-card {
+  background: var(--background-dark);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.player-card.current-player {
+  border-color: var(--primary-gold);
+  background: var(--background-light);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.player-card.empty-slot {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
+.player-sprite {
+  font-size: 2.5em;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.player-info {
+  flex: 1;
+}
+
+.player-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.you-indicator {
+  color: var(--primary-gold);
+  font-size: 0.8em;
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+.player-class {
+  color: var(--text-light);
+  opacity: 0.8;
+  font-size: 1em;
+}
+
+.player-ready-status {
+  font-size: 0.9em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.3);
+}
+
+/* Game Info */
+.game-info-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--background-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-label {
+  color: var(--text-light);
+  opacity: 0.8;
+}
+
+.info-value {
+  color: var(--primary-gold);
+  font-weight: bold;
+}
+
+/* Actions */
+.lobby-actions {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.start-game-section {
+  padding: 20px;
+}
+
+.start-game-info {
+  font-size: 1.2em;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.start-button {
+  width: 250px;
+  height: 50px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.start-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.game-status-section {
+  padding: 20px;
+}
+
+.game-status-message {
+  font-size: 1.3em;
+  color: var(--primary-gold);
+  font-weight: bold;
+}
+
+/* Help */
+.lobby-help {
+  background: var(--background-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.lobby-help p {
+  color: var(--primary-gold);
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.lobby-help ul {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.lobby-help li {
+  margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lobby-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .lobby-code-section {
+    text-align: center;
+  }
+  
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .player-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
